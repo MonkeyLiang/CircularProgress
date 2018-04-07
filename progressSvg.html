@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+		<title>环状进度条</title>
+		<link rel="stylesheet" type="text/css" href="circle.css"/>
+	</head>
+	<body>
+		<div class="circle ring" id="ring-box">
+			<div id="ring">
+				<!--<svg class="ring-svg" xmlns="http://www.w3.org/2000/svg">
+					<circle id="bgLoop" class="loop" r="100" cy="50%" cx="50%" stroke-width="3" stroke="#444" fill="none"></circle>
+					<circle style="stroke-dasharray: 628.318; stroke-dashoffset: 628.318;" id="progress" class="progress" r="100" cy="50%" cx="50%" stroke-width="4" stroke="url(#purple)" stroke-linejoin="round" stroke-linecap="round" fill="none"></circle>
+					<defs>
+						<linearGradient id="purple" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="#17b4eb"></stop>
+							<stop offset="100%" stop-color="#17b4eb"></stop>
+						</linearGradient>
+					</defs>
+				</svg>-->
+			</div>
+			<div class="ring-text" id="percent-box">    
+				<span class="ring-title" ><span id="percent" >66</span><span class="ring-percent">%</span></span>  
+			</div>
+		</div>
+		<a href="progressCanvas.html" class="btn">goCanvas</a>
+		<script src="progressSvg.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			ringProgress("#ring",{
+				r:"100",// 半径
+	            bgWidth:"3",//环线宽度
+	            bgColor:"#444",//环线颜色
+	            ProgressWidth:"4",//进度条宽度
+	            ProgressColor:"#17b4eb",//进度条颜色
+			});		
+		</script>
+<script type="text/javascript">
+    // $(function () {
+        var Sys = {};
+        var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? Sys.ie = s[1] :
+        (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+        (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+        (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+        (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+        
+        if (Sys.ie) console.log('IE: ' + Sys.ie);
+        if (Sys.firefox) console.log('Firefox: ' + Sys.firefox);
+        if (Sys.chrome) console.log('Chrome: ' + Sys.chrome);
+        if (Sys.opera) console.log('Opera: ' + Sys.opera);
+        if (Sys.safari) console.log('Safari: ' + Sys.safari);
+    // });
+</script>
+	</body>
+</html>
