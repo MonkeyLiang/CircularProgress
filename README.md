@@ -1,5 +1,5 @@
 # CircularProgress
-通过SCG和Canvas实现的环装进度条  
+通过SVG和Canvas实现的环状进度条  
 
 ## Canvas
 
